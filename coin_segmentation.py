@@ -10,7 +10,7 @@ import numpy as np
 import os
 
 # Load the image
-image_path = "D:/iiitb/sem2/vr/vr assignment 1/WhatsApp Image 2025-02-14 at 23.37.29_1086d849.jpg"
+image_path = "D:/iiitb/sem2/vr/VR_Assignment1_SyedThouseefAhmed_MT2024159/segmented_coins\WhatsApp Image 2025-02-14 at 23.37.29_1086d849.jpg"
 image = cv2.imread(image_path)
 
 # Convert to grayscale
@@ -97,14 +97,12 @@ output_resized = cv2.resize(output, (400, 400))
 blended_resized = cv2.resize(blended, (400, 400))
 mask_resized = cv2.resize(mask, (400, 400))
 
-cv2.imwrite(os.path.join(output_dir, "segmented_coins_with_bounding_boxes.png"), image)
 cv2.imwrite(os.path.join(output_dir, "original_image_with_numbers.png"), image_resized)
 cv2.imwrite(os.path.join(output_dir, "only_coin_edges.png"), output_resized)
 cv2.imwrite(os.path.join(output_dir, "green_filled_coins.png"), mask_resized)
 cv2.imwrite(os.path.join(output_dir, "blended_output.png"), blended_resized)
 
 # Display results
-cv2.imshow("Segmented Coins with Bounding Boxes", image)
 cv2.imshow("Original Image with Numbers", image_resized)
 cv2.imshow("Only Coin Edges", output_resized)
 cv2.imshow("Green Filled Coins", mask_resized)
